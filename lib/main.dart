@@ -7,10 +7,13 @@ void main() {
 class NotesAPP extends StatelessWidget {
   const NotesAPP({super.key});
 
-
-
   @override
   Widget build(BuildContext context) {
-    return MaterialApp();
+    return MaterialApp(
+      theme: ThemeData(
+        brightness: Brightness.dark,
+      ),
+      home: Scaffold(),
+    );
   }
 }
