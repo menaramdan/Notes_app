@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:notes_app/widgets/notes_item_listview.dart';
 import 'package:notes_app/widgets/notes_view_appbar.dart';
 
 class NotesViewBody extends StatelessWidget {
@@ -9,6 +10,7 @@ class NotesViewBody extends StatelessWidget {
     return Column(
       children: [
       NotesViewAppbar(),
+      Expanded(child: NotesItemListview())
       ],
     );
   }

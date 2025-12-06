@@ -6,16 +6,22 @@ class NotesViewAppbar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Row(
-      children: [
-        SizedBox(height: 140,),
-        Text('Notes' , style: TextStyle(color: Colors.white, fontSize: 28, fontWeight: FontWeight.bold),),
-    
-        Padding(
-          padding: EdgeInsets.only(left: 270),
-          child: NotesViewIcon(),
-        )
-      ],
+    return Padding(
+      padding: const EdgeInsets.only(top: 60),
+      child: const Row(
+        children: [
+          Text(
+            'Notes',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 28,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+
+          Padding(padding: EdgeInsets.only(left: 270), child: NotesViewIcon()),
+        ],
+      ),
     );
   }
 }

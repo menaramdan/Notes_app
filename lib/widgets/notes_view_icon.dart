@@ -14,10 +14,15 @@ class NotesViewIcon extends StatelessWidget {
         color: Colors.white.withValues(alpha: 0.2),
       ),
       child: Center(
-        child: Icon(
-          Icons.search,
-          size: 27,
-          color: Colors.white,
+        child: IconButton(
+          onPressed: () {
+            
+          },
+          icon: Icon(
+              Icons.search,
+              size: 27,
+              color: Colors.white,
+          ),
           
         ),
       ),
