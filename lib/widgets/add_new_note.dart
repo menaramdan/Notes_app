@@ -8,7 +8,9 @@ class AddNewNote extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(children: [
         SizedBox(height: 30,),
-        CustomTextField(),
+        CustomTextField(hint: 'title',),
+        SizedBox(height: 4,),
+        CustomTextField(hint: 'content',maxlines: 5,)
         
       ],
     );
