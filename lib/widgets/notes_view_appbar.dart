@@ -2,24 +2,26 @@ import 'package:flutter/material.dart';
 import 'package:notes_app/widgets/notes_view_icon.dart';
 
 class NotesViewAppbar extends StatelessWidget {
-  const NotesViewAppbar({super.key});
-
+  const NotesViewAppbar({super.key, required this.title, required this.icon});
+  final String title;
+  final IconData icon;
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(top: 60),
-      child: const Row(
+      child:  Row(
         children: [
           Text(
-            'Notes',
+            title,
             style: TextStyle(
               color: Colors.white,
               fontSize: 28,
               fontWeight: FontWeight.bold,
             ),
           ),
-
-          Padding(padding: EdgeInsets.only(left: 270), child: NotesViewIcon()),
+      
+          NotesViewIcon(icon: icon),
+          
         ],
       ),
     );

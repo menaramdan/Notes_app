@@ -9,7 +9,7 @@ class NotesViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-      NotesViewAppbar(),
+      NotesViewAppbar(title: 'Notes',icon: Icons.search,),
       Expanded(child: NotesItemListview())
       ],
     );
