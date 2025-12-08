@@ -7,7 +7,8 @@ class AddNewNote extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(children: [
+    return ListView(
+      children: [
         SizedBox(height: 30,),
         CustomTextField(hint: 'title',),
         SizedBox(height: 4,),

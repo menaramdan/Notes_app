@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:notes_app/helper/constant.dart';
 
 class CustomIconaddNote extends StatelessWidget {
   const CustomIconaddNote({super.key});
@@ -8,13 +9,13 @@ class CustomIconaddNote extends StatelessWidget {
     return  Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
-        width: 350,
+        width: MediaQuery.of(context).size.width,
         height: 50,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(9),
-          color: Colors.blueAccent,
+          color: kprimary,
         ),
-        child: Center(child: Text('Add',style: TextStyle(color: Colors.white,fontSize: 15),)),
+        child: Center(child: Text('Add',style: TextStyle(color: Colors.black,fontSize: 18),)),
       ),
     );
   }
