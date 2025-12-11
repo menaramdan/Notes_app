@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:notes_app/widgets/custom_icon_%20add_note.dart';
 import 'package:notes_app/widgets/custom_text_field.dart';
 
-class AddNewNOte extends StatefulWidget {
-  const AddNewNOte({super.key});
+class AddNewNOteForm extends StatefulWidget {
+  const AddNewNOteForm({super.key});
 
   @override
-  State<AddNewNOte> createState() => _AddNewNOteState();
+  State<AddNewNOteForm> createState() => _AddNewNOteFormState();
 }
 
-class _AddNewNOteState extends State<AddNewNOte> {
+class _AddNewNOteFormState extends State<AddNewNOteForm> {
   GlobalKey<FormState> formkey = GlobalKey();
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
   String? title, content;
@@ -41,9 +41,7 @@ class _AddNewNOteState extends State<AddNewNOte> {
               if (formkey.currentState!.validate()) {
                 formkey.currentState!.save();
               } else {
-                setState(() {
-                  
-                });
+                setState(() {});
                 AutovalidateMode.always;
               }
             },
