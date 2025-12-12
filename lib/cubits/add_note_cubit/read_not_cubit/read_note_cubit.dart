@@ -6,14 +6,9 @@ import 'package:notes_app/models/note_model.dart';
 
 class ReadNoteCubit extends Cubit<ReadNoteCubitState> {
   ReadNoteCubit() : super(NoteCubitInitial());
-
-  readAllNote() {
-    try {
-      var notebox = Hive.box<NoteModel>(knotesbox);
-      List<NoteModel> notes = notebox.values.toList();
-      emit(NoteCubitSucces(notes));
-    } on Exception catch (e) {
-      emit(NoteCubitFailure('that are error massage ${e.toString()}'));
-    }
+  List<NoteModel>? notes;
+  readallnotes() {
+    var notesbox = Hive.box<NoteModel>(knotesbox);
+    notes = notesbox.values.toList();
   }
 }
