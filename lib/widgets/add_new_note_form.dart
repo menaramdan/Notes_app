@@ -12,7 +12,6 @@ class AddNewNOteForm extends StatefulWidget {
   @override
   State<AddNewNOteForm> createState() => _AddNewNOteFormState();
 }
-
 class _AddNewNOteFormState extends State<AddNewNOteForm> {
   GlobalKey<FormState> formkey = GlobalKey();
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
