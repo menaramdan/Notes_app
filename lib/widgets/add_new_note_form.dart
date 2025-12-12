@@ -43,17 +43,17 @@ class _AddNewNOteFormState extends State<AddNewNOteForm> {
             ontap: () {
               if (formkey.currentState!.validate()) {
                 formkey.currentState!.save();
-              } else {
-                setState(() {});
-                AutovalidateMode.always;
-              }
-              var notemodel = NoteModel(
+                var notemodel = NoteModel(
                 data: DateTime.now().toString(),
                 title: title!,
                 subtitle: content!,
                 color: Colors.black.value,
               );
               BlocProvider.of<AddNoteCubit>(context).addNote(notemodel);
+              } else {
+                setState(() {});
+                AutovalidateMode.always;
+              }
             },
           ),
         ],
