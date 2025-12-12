@@ -20,7 +20,10 @@ class AddNewNote extends StatelessWidget {
           }
         },
         builder: (context, state) {
-          return AddNewNOteForm();
+          return AbsorbPointer(
+            absorbing: state is AddNoteloading ? true : false,
+            child: AddNewNOteForm()
+            );
         },
       ),
     );
