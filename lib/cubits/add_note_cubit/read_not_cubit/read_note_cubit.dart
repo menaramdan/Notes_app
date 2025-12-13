@@ -7,7 +7,7 @@ import 'package:notes_app/models/note_model.dart';
 class ReadNoteCubit extends Cubit<ReadNoteCubitState> {
   ReadNoteCubit() : super(NoteCubitInitial());
   List<NoteModel>? notes;
-  readallnotes() {
+  readAllNotes() async {
     var notesbox = Hive.box<NoteModel>(knotesbox);
     notes = notesbox.values.toList();
     emit(NoteCubitSucces(notes!));
