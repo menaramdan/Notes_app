@@ -6,11 +6,12 @@ class CustomTextField extends StatelessWidget {
     super.key,
     this.maxlines = 1,
     required this.hint,
-      this.onSaved,
+      this.onSaved, this.onChange,
   });
   final int maxlines;
   final String hint;
   final void Function(String?)? onSaved;
+   final Function(String)? onChange;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -24,6 +25,7 @@ class CustomTextField extends StatelessWidget {
           }
         },
         onSaved: onSaved,
+        onChanged:onChange ,
         maxLines: maxlines,
         decoration: InputDecoration(
           hint: Text(hint, style: TextStyle(color: kprimary)),

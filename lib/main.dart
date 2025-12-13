@@ -18,13 +18,14 @@ void main() async {
 }
 
 class NotesAPP extends StatelessWidget {
-  const NotesAPP({super.key});
+  const NotesAPP({super.key ,});
+  
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => ReadNoteCubit(),
       child: MaterialApp(
-        routes: {EditNoteView.id: (context) => EditNoteView()},
+        
         theme: ThemeData(brightness: Brightness.dark, fontFamily: 'Poppins'),
         home: NotesView(),
         debugShowCheckedModeBanner: false,
