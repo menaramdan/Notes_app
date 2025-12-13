@@ -10,8 +10,3 @@ class NoteCubitSucces extends ReadNoteCubitState {
   NoteCubitSucces(this.model);
 }
 
-class NoteCubitFailure extends ReadNoteCubitState {
-  final String errorrmassage;
-
-  NoteCubitFailure(this.errorrmassage);
-}

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:intl/intl.dart';
 import 'package:notes_app/cubits/add_note_cubit/add_note_cubit.dart';
 import 'package:notes_app/cubits/add_note_cubit/add_note_state.dart';
 import 'package:notes_app/models/note_model.dart';
@@ -12,6 +13,7 @@ class AddNewNOteForm extends StatefulWidget {
   @override
   State<AddNewNOteForm> createState() => _AddNewNOteFormState();
 }
+
 class _AddNewNOteFormState extends State<AddNewNOteForm> {
   GlobalKey<FormState> formkey = GlobalKey();
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
@@ -42,12 +44,16 @@ class _AddNewNOteFormState extends State<AddNewNOteForm> {
           BlocBuilder<AddNoteCubit, AddNoteState>(
             builder: (context, state) {
               return CustomIconaddNote(
-                isloading:  state is AddNoteloading ? true : false ,
+                isloading: state is AddNoteloading ? true : false,
                 ontap: () {
                   if (formkey.currentState!.validate()) {
                     formkey.currentState!.save();
+                    var currentdate = DateTime.now();
+                    var formatedate = DateFormat(
+                      'dd-mm-yyyy',
+                    ).format(currentdate);
                     var notemodel = NoteModel(
-                      data: DateTime.now().toString(),
+                      data: formatedate,
                       title: title!,
                       subtitle: content!,
                       color: Colors.black.value,
